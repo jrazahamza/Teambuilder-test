@@ -5,6 +5,7 @@ import { useNextSanityImage } from "next-sanity-image";
 import { ProductsTypes } from "./page";
 import { memo, useContext, useEffect, useState } from "react";
 import { UC } from "./context";
+import { formatPriceToJPY } from "../lib/utils";
 
 interface ProductsProps {
   products: ProductsTypes;
@@ -68,9 +69,9 @@ const Products = ({ products, gap }: ProductsProps) => {
           <p> {products.name} </p>
           <div className=" flex gap-3">
             <span className=" text-sm text-lightGray line-through ">
-              ${products.oldPrice}
+              {formatPriceToJPY(products.oldPrice)}
             </span>
-            <b className=" text-zinc-900 "> ${products.price} </b>
+            <b className=" text-zinc-900 "> {formatPriceToJPY(products.price)} </b>
           </div>
         </nav>
 

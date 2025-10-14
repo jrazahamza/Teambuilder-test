@@ -45,3 +45,13 @@
   background: rgb(9, 107, 9);
   color: #b41c4c;
 }
+
+/* Hide scrollbar for RTL carousel */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

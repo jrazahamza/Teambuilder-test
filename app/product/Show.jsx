@@ -5,6 +5,7 @@ import Marquee from "../../comps/Marquee";
 import { urlFor } from "../../lib/client";
 import { UC } from "../context";
 import { Minus, Plus, Star } from "../../comps/Svg";
+import { formatPriceToJPY } from "../../lib/utils";
 
 const Show = ({ product, products }) => {
   console.log("show");
@@ -101,7 +102,7 @@ const Show = ({ product, products }) => {
               <div className=" text-secondary font-medium ">DETAILS:</div>
               <p className="w-2/3 text-lightGray"> {product.details}</p>
 
-              <div className=" my-4 text-2xl font-bold"> ${product.price} </div>
+              <div className=" my-4 text-2xl font-bold"> {formatPriceToJPY(product.price)} </div>
 
               {/* ==== QUANTITY SHOW  */}
               <div className="flex">
@@ -146,7 +147,7 @@ const Show = ({ product, products }) => {
 
               <div
                 className=" text-center hover:scale-105 transition shadow-md cursor-pointer
-                 bg-primary text-xl px-8 py-2  text-highLight ring-1 ring-primary"
+                 bg-primary text-xl px-8 py-2  text-white ring-1 ring-primary"
               >
                 Buy Now
               </div>
